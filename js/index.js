@@ -12,7 +12,7 @@ const boton = document.querySelector("#registrar-btn");
 boton.addEventListener('click', ()=>{
     let erroresDiv = document.querySelector("#errores-div");
     erroresDiv.innerHTML = "";
-
+    //aca me marca un error en console
     let nombre = document.querySelector("#nombre-txt").value.trim();
     let planes = document.querySelector("#planes-select").value;
     let pago = document.querySelector("#pagos-select").value;
