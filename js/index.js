@@ -1,4 +1,4 @@
-window.registro = [];
+//window.registro = [];
 //switchery codigo
 var elem = document.querySelector('.js-switch');
 var init = new Switchery(elem,{
@@ -7,16 +7,29 @@ var init = new Switchery(elem,{
     jackColor:'white'
 });
 
+window.mostrarErrores = (errores)=>{
+    let erroresDiv = document.querySelector("#errores-div");
+    let ul = document.createElement("ul");
+    ul.classList.add("alert","alert-warning");
+    errores.forEach(e=> {
+        let li = document.createElement("li");
+        li.innerText = e;
+        ul.appendChild(li);
+    });
+    erroresDiv.appendChild(ul);
+    
+}
+
 const boton = document.querySelector("#registrar-btn");
 
+
 boton.addEventListener('click', ()=>{
-    let erroresDiv = document.querySelector("#errores-div");
-    erroresDiv.innerHTML = "";
-    //aca me marca un error en console
-    let nombre = document.querySelector("#nombre-txt").value.trim();
+    
+    document.querySelector("#errores-div").innerHTML = "";
+    let nombre = document.querySelector("#nombre-txt").value;
     let planes = document.querySelector("#planes-select").value;
     let pago = document.querySelector("#pagos-select").value;
-    let estado = document.querySelector("#estado-pago").checked;
+    let check = document.querySelector("#estado-pago").checked;
 
     let errores = [];
 
