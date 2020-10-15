@@ -1,4 +1,4 @@
-//window.registro = [];
+window.registro = [];
 //switchery codigo
 var elem = document.querySelector('.js-switch');
 var init = new Switchery(elem,{
@@ -6,6 +6,10 @@ var init = new Switchery(elem,{
     secondaryColor:'red',
     jackColor:'white'
 });
+
+window.mostrarCard = ()=>{
+    
+}
 
 window.mostrarErrores = (errores)=>{
     let erroresDiv = document.querySelector("#errores-div");
